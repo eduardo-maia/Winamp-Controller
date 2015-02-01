@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# http://httpq.sourceforge.net/reference.html
+# Before using this module, you need first to install and configure httpq plugin - http://httpq.sourceforge.net/reference.html
 use strict;
 use warnings;
 use LWP;
