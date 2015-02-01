@@ -1,0 +1,2062 @@
+<html>
+<head>
+	<meta name="description" content="a network protocol and server for winamp.">
+	<meta name="keywords" content="httpq,winamp,network,protocol,server,plugin">
+	<title>Winamp httpQ Plugin - Network protocol for winamp</title>
+</head>
+<link rel="stylesheet" type='text/css' href='style.css' />
+
+
+<body marginwidth="0" marginheight="0" leftmargin="0" rightmargin="0" topmargin="0">
+
+
+<br />
+<!-- begin content --->
+
+<table width="95%" border="0" align="center">
+	<tr> 
+		<td>Winamp httpQ API Reference</td>
+	</tr>
+	<tr><td>&nbsp;</td></tr>
+	<tr>
+
+		<td>
+			<div id="toc">
+				<table align='center' style='width:95%'>
+				<tr valign='top'>
+									<td style='width:33%'>
+											<div style='padding:2px;'><a href='#chdir'>chdir</a></div>
+											<div style='padding:2px;'><a href='#delete'>delete</a></div>
+											<div style='padding:2px;'><a href='#deletepos'>deletepos</a></div>
+
+											<div style='padding:2px;'><a href='#enqueuefile'>enqueuefile</a></div>
+											<div style='padding:2px;'><a href='#enqueueurl'>enqueueurl</a></div>
+											<div style='padding:2px;'><a href='#exec_visual'>exec_visual</a></div>
+											<div style='padding:2px;'><a href='#fadeoutandstop'>fadeoutandstop</a></div>
+											<div style='padding:2px;'><a href='#flushplaylist'>flushplaylist</a></div>
+											<div style='padding:2px;'><a href='#getautoservice'>getautoservice</a></div>
+
+											<div style='padding:2px;'><a href='#getcurrenttitle'>getcurrenttitle</a></div>
+											<div style='padding:2px;'><a href='#getdirty'>getdirty</a></div>
+											<div style='padding:2px;'><a href='#geteqdata'>geteqdata</a></div>
+											<div style='padding:2px;'><a href='#geteqdatum'>geteqdatum</a></div>
+											<div style='padding:2px;'><a href='#gethash'>gethash</a></div>
+											<div style='padding:2px;'><a href='#gethash'>gethash</a></div>
+
+											<div style='padding:2px;'><a href='#getid3tag'>getid3tag</a></div>
+											<div style='padding:2px;'><a href='#getid3tag'>getid3tag</a></div>
+											<div style='padding:2px;'><a href='#getid3v2tag'>getid3v2tag</a></div>
+											<div style='padding:2px;'><a href='#getid3v2tag'>getid3v2tag</a></div>
+											<div style='padding:2px;'><a href='#getinfo'>getinfo</a></div>
+											<div style='padding:2px;'><a href='#getlistlength'>getlistlength</a></div>
+
+											<div style='padding:2px;'><a href='#getlistpos'>getlistpos</a></div>
+										</td>
+									<td style='width:33%'>
+											<div style='padding:2px;'><a href='#getmpeginfo'>getmpeginfo</a></div>
+											<div style='padding:2px;'><a href='#getmpeginfo'>getmpeginfo</a></div>
+											<div style='padding:2px;'><a href='#getoutputtime'>getoutputtime</a></div>
+											<div style='padding:2px;'><a href='#getplaylistfile'>getplaylistfile</a></div>
+
+											<div style='padding:2px;'><a href='#getplaylistfile'>getplaylistfile</a></div>
+											<div style='padding:2px;'><a href='#getplaylistfilelist'>getplaylistfilelist</a></div>
+											<div style='padding:2px;'><a href='#getplaylisttitle'>getplaylisttitle</a></div>
+											<div style='padding:2px;'><a href='#getplaylisttitle'>getplaylisttitle</a></div>
+											<div style='padding:2px;'><a href='#getplaylisttitlelist'>getplaylisttitlelist</a></div>
+											<div style='padding:2px;'><a href='#getversion'>getversion</a></div>
+
+											<div style='padding:2px;'><a href='#getvolume'>getvolume</a></div>
+											<div style='padding:2px;'><a href='#hasid3tag'>hasid3tag</a></div>
+											<div style='padding:2px;'><a href='#hasid3tag'>hasid3tag</a></div>
+											<div style='padding:2px;'><a href='#hasid3v2tag'>hasid3v2tag</a></div>
+											<div style='padding:2px;'><a href='#hasid3v2tag'>hasid3v2tag</a></div>
+											<div style='padding:2px;'><a href='#internet'>internet</a></div>
+
+											<div style='padding:2px;'><a href='#isplaying'>isplaying</a></div>
+											<div style='padding:2px;'><a href='#jumptotime'>jumptotime</a></div>
+											<div style='padding:2px;'><a href='#next'>next</a></div>
+											<div style='padding:2px;'><a href='#pause'>pause</a></div>
+											<div style='padding:2px;'><a href='#play'>play</a></div>
+											<div style='padding:2px;'><a href='#playfile'>playfile</a></div>
+
+										</td>
+									<td style='width:33%'>
+											<div style='padding:2px;'><a href='#playurl'>playurl</a></div>
+											<div style='padding:2px;'><a href='#prev'>prev</a></div>
+											<div style='padding:2px;'><a href='#repeat'>repeat</a></div>
+											<div style='padding:2px;'><a href='#repeat_status'>repeat_status</a></div>
+											<div style='padding:2px;'><a href='#restart'>restart</a></div>
+
+											<div style='padding:2px;'><a href='#setautoservice'>setautoservice</a></div>
+											<div style='padding:2px;'><a href='#setclean'>setclean</a></div>
+											<div style='padding:2px;'><a href='#seteqdata'>seteqdata</a></div>
+											<div style='padding:2px;'><a href='#seteqdatum'>seteqdatum</a></div>
+											<div style='padding:2px;'><a href='#setplaylistpos'>setplaylistpos</a></div>
+											<div style='padding:2px;'><a href='#setvolume'>setvolume</a></div>
+
+											<div style='padding:2px;'><a href='#shoutcast_connect'>shoutcast_connect</a></div>
+											<div style='padding:2px;'><a href='#shoutcast_status'>shoutcast_status</a></div>
+											<div style='padding:2px;'><a href='#shuffle'>shuffle</a></div>
+											<div style='padding:2px;'><a href='#shuffle_status'>shuffle_status</a></div>
+											<div style='padding:2px;'><a href='#stop'>stop</a></div>
+											<div style='padding:2px;'><a href='#swappos'>swappos</a></div>
+
+											<div style='padding:2px;'><a href='#updatecurrenttitle'>updatecurrenttitle</a></div>
+											<div style='padding:2px;'><a href='#validate_password'>validate_password</a></div>
+											<div style='padding:2px;'><a href='#volumedown'>volumedown</a></div>
+											<div style='padding:2px;'><a href='#volumeup'>volumeup</a></div>
+										</td>
+								</tr>
+				</table>
+
+			</div>
+		</td>
+	</tr>
+	<tr><td>&nbsp;</td></tr>
+	<tr>
+		<td>
+			<div id="content">
+
+										<div class='DocHeader'><a name='chdir'></a>chdir</div>
+
+						<div class='DocSubHeader'><p>Change the working direcotry to 'argument'.</p></div>
+						<table class='DocItemTable' width='85%'>
+							
+							<tr>
+								<td class='DocItemHeader' width='20%'>Paramater</td>
+								<td class='DocItemHeader'>Description</td>
+							</tr>
+														<tr>
+
+								<td valign='top' class='DocItem'><div class='CodeSample'>p</div></td>
+								<td valign='top' class='DocItem'>The password.</td>
+							</tr>
+														<tr>
+								<td colspan='2' class='DocItemHeader'>Return Value</td>
+							</tr>
+							<tr>
+
+								<td colspan='2' class='DocItem'>1 on success. <br/>        0 otherwise.</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItemHeader'>Example</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>http://localhost:4800/chdir?p=pass&dir=c:\My%20Music</td>
+
+							</tr>
+						</table>
+						<br><br>
+										<div class='DocHeader'><a name='delete'></a>delete</div>
+						<div class='DocSubHeader'><p>Clears the contents of the play list.</p></div>
+						<table class='DocItemTable' width='85%'>
+							
+							<tr>
+								<td class='DocItemHeader' width='20%'>Paramater</td>
+
+								<td class='DocItemHeader'>Description</td>
+							</tr>
+														<tr>
+								<td valign='top' class='DocItem'><div class='CodeSample'>p</div></td>
+								<td valign='top' class='DocItem'>The password.</td>
+							</tr>
+														<tr>
+
+								<td colspan='2' class='DocItemHeader'>Return Value</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>1 on success, 0 otherwise.</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItemHeader'>Example</td>
+
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>http://localhost:4800/delete?p=pass</td>
+							</tr>
+						</table>
+						<br><br>
+										<div class='DocHeader'><a name='deletepos'></a>deletepos</div>
+						<div class='DocSubHeader'><p>Deletes the playlist item at index 'argument'.</p></div>
+
+						<table class='DocItemTable' width='85%'>
+							
+							<tr>
+								<td class='DocItemHeader' width='20%'>Paramater</td>
+								<td class='DocItemHeader'>Description</td>
+							</tr>
+														<tr>
+								<td valign='top' class='DocItem'><div class='CodeSample'>p</div></td>
+
+								<td valign='top' class='DocItem'>The password.</td>
+							</tr>
+														<tr>
+								<td colspan='2' class='DocItemHeader'>Return Value</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>1 on success, <br/>        0 otherwise.</td>
+
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItemHeader'>Example</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>http://localhost:4800/deletepos?p=pass&index=0</td>
+							</tr>
+
+						</table>
+						<br><br>
+										<div class='DocHeader'><a name='enqueuefile'></a>enqueuefile</div>
+						<div class='DocSubHeader'><p>Append a file to the playlist. <br/></p></div>
+						<table class='DocItemTable' width='85%'>
+							
+							<tr>
+								<td class='DocItemHeader' width='20%'>Paramater</td>
+
+								<td class='DocItemHeader'>Description</td>
+							</tr>
+														<tr>
+								<td valign='top' class='DocItem'><div class='CodeSample'>p</div></td>
+								<td valign='top' class='DocItem'>The password.</td>
+							</tr>
+														<tr>
+
+								<td colspan='2' class='DocItemHeader'>Return Value</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>1 on success. <br/>        0 otherwise.</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItemHeader'>Example</td>
+
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>http://localhost:4800/enqueuefile?p=pass&title=songname&file=c:\My%20Music\Song.mp3</td>
+							</tr>
+						</table>
+						<br><br>
+										<div class='DocHeader'><a name='enqueueurl'></a>enqueueurl</div>
+
+						<div class='DocSubHeader'><p>Append a URL to the playlist. <br/></p></div>
+						<table class='DocItemTable' width='85%'>
+							
+							<tr>
+								<td class='DocItemHeader' width='20%'>Paramater</td>
+								<td class='DocItemHeader'>Description</td>
+							</tr>
+														<tr>
+
+								<td valign='top' class='DocItem'><div class='CodeSample'>p</div></td>
+								<td valign='top' class='DocItem'>The password.</td>
+							</tr>
+														<tr>
+								<td colspan='2' class='DocItemHeader'>Return Value</td>
+							</tr>
+							<tr>
+
+								<td colspan='2' class='DocItem'>1 on success. <br/>        0 otherwise.</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItemHeader'>Example</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>http://localhost:4800/enqueueurl?p=pass&title=songname&url=c:\My%20Music\Song.mp3</td>
+
+							</tr>
+						</table>
+						<br><br>
+										<div class='DocHeader'><a name='exec_visual'></a>exec_visual</div>
+						<div class='DocSubHeader'><p>Launch the current visualization plugin.</p></div>
+						<table class='DocItemTable' width='85%'>
+							
+							<tr>
+								<td class='DocItemHeader' width='20%'>Paramater</td>
+
+								<td class='DocItemHeader'>Description</td>
+							</tr>
+														<tr>
+								<td valign='top' class='DocItem'><div class='CodeSample'>p</div></td>
+								<td valign='top' class='DocItem'>The password.</td>
+							</tr>
+														<tr>
+
+								<td colspan='2' class='DocItemHeader'>Return Value</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>1 on success, <br/>        0 otherwise.</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItemHeader'>Example</td>
+
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>http://localhost:4800/exec_visual?p=pass</td>
+							</tr>
+						</table>
+						<br><br>
+										<div class='DocHeader'><a name='fadeoutandstop'></a>fadeoutandstop</div>
+						<div class='DocSubHeader'><p>Fades out current song and stops playing.</p></div>
+
+						<table class='DocItemTable' width='85%'>
+							
+							<tr>
+								<td class='DocItemHeader' width='20%'>Paramater</td>
+								<td class='DocItemHeader'>Description</td>
+							</tr>
+														<tr>
+								<td valign='top' class='DocItem'><div class='CodeSample'>p</div></td>
+
+								<td valign='top' class='DocItem'>The password.</td>
+							</tr>
+														<tr>
+								<td colspan='2' class='DocItemHeader'>Return Value</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>1 on success, 0 otherwise.</td>
+
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItemHeader'>Example</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>http://localhost:4800/fadeoutandstop?p=pass</td>
+							</tr>
+						</table>
+
+						<br><br>
+										<div class='DocHeader'><a name='flushplaylist'></a>flushplaylist</div>
+						<div class='DocSubHeader'><p>Flushes the playlist cache buffer.</p></div>
+						<table class='DocItemTable' width='85%'>
+							
+							<tr>
+								<td class='DocItemHeader' width='20%'>Paramater</td>
+								<td class='DocItemHeader'>Description</td>
+
+							</tr>
+														<tr>
+								<td valign='top' class='DocItem'><div class='CodeSample'>p</div></td>
+								<td valign='top' class='DocItem'>The password.</td>
+							</tr>
+														<tr>
+								<td colspan='2' class='DocItemHeader'>Return Value</td>
+
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>1 on success. <br/>        0 otherwise.</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItemHeader'>Example</td>
+							</tr>
+
+							<tr>
+								<td colspan='2' class='DocItem'>http://localhost:4800/flushplaylist?p=pass</td>
+							</tr>
+						</table>
+						<br><br>
+										<div class='DocHeader'><a name='getautoservice'></a>getautoservice</div>
+						<div class='DocSubHeader'><p>Returns the status the httpQ autostart configuration.</p></div>
+
+						<table class='DocItemTable' width='85%'>
+							
+							<tr>
+								<td class='DocItemHeader' width='20%'>Paramater</td>
+								<td class='DocItemHeader'>Description</td>
+							</tr>
+														<tr>
+								<td valign='top' class='DocItem'><div class='CodeSample'>p</div></td>
+
+								<td valign='top' class='DocItem'>The password.</td>
+							</tr>
+														<tr>
+								<td colspan='2' class='DocItemHeader'>Return Value</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>1 if the service is set to start automatically.</td>
+
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItemHeader'>Example</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>http://localhost:4800/getautoservice?p=pass</td>
+							</tr>
+						</table>
+
+						<br><br>
+										<div class='DocHeader'><a name='getcurrenttitle'></a>getcurrenttitle</div>
+						<div class='DocSubHeader'><p>Returns the title of the current song from the winamp window name.         Used when the playlist title is not enough.</p></div>
+						<table class='DocItemTable' width='85%'>
+							
+							<tr>
+								<td class='DocItemHeader' width='20%'>Paramater</td>
+								<td class='DocItemHeader'>Description</td>
+
+							</tr>
+														<tr>
+								<td valign='top' class='DocItem'><div class='CodeSample'>p</div></td>
+								<td valign='top' class='DocItem'>The password.</td>
+							</tr>
+														<tr>
+								<td colspan='2' class='DocItemHeader'>Return Value</td>
+
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>Song title on success.</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItemHeader'>Example</td>
+							</tr>
+							<tr>
+
+								<td colspan='2' class='DocItem'>http://localhost:4800/getcurrenttitle?p=pass</td>
+							</tr>
+						</table>
+						<br><br>
+										<div class='DocHeader'><a name='getdirty'></a>getdirty</div>
+						<div class='DocSubHeader'><p>Check the dirty flag for the the current playlist.</p></div>
+						<table class='DocItemTable' width='85%'>
+
+							
+							<tr>
+								<td class='DocItemHeader' width='20%'>Paramater</td>
+								<td class='DocItemHeader'>Description</td>
+							</tr>
+														<tr>
+								<td valign='top' class='DocItem'><div class='CodeSample'>p</div></td>
+								<td valign='top' class='DocItem'>The password.</td>
+
+							</tr>
+														<tr>
+								<td colspan='2' class='DocItemHeader'>Return Value</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>1 if playlist has changed since last setclean. <br/></td>
+							</tr>
+							<tr>
+
+								<td colspan='2' class='DocItemHeader'>Example</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>http://localhost:4800/getdirty?p=pass</td>
+							</tr>
+						</table>
+						<br><br>
+										<div class='DocHeader'><a name='geteqdata'></a>geteqdata</div>
+
+						<div class='DocSubHeader'><p>Gets a band of eq data.</p></div>
+						<table class='DocItemTable' width='85%'>
+							
+							<tr>
+								<td class='DocItemHeader' width='20%'>Paramater</td>
+								<td class='DocItemHeader'>Description</td>
+							</tr>
+														<tr>
+
+								<td valign='top' class='DocItem'><div class='CodeSample'>p</div></td>
+								<td valign='top' class='DocItem'>The password.</td>
+							</tr>
+														<tr>
+								<td colspan='2' class='DocItemHeader'>Return Value</td>
+							</tr>
+							<tr>
+
+								<td colspan='2' class='DocItem'>0-9: 0-63 (+20db - -20db). <br/>        10 : 0-63 (+20db - -20db). <br/>        11 : Zero if disabled, nonzero if enabled. <br/>        12 : Zero if disabled, nonzero if enabled.</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItemHeader'>Example</td>
+							</tr>
+
+							<tr>
+								<td colspan='2' class='DocItem'>http://localhost:4800/geteqdata?p=pass&band=0</td>
+							</tr>
+						</table>
+						<br><br>
+										<div class='DocHeader'><a name='geteqdatum'></a>geteqdatum</div>
+						<div class='DocSubHeader'><p>Gets all bands of eq data seperated by the specified delimiter.</p></div>
+
+						<table class='DocItemTable' width='85%'>
+							
+							<tr>
+								<td class='DocItemHeader' width='20%'>Paramater</td>
+								<td class='DocItemHeader'>Description</td>
+							</tr>
+														<tr>
+								<td valign='top' class='DocItem'><div class='CodeSample'>p</div></td>
+
+								<td valign='top' class='DocItem'>The password.</td>
+							</tr>
+														<tr>
+								<td colspan='2' class='DocItemHeader'>Return Value</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>0-9: 0-63 (+20db - -20db). <br/>        10 : 0-63 (+20db - -20db). <br/>        11 : Zero if disabled, nonzero if enabled. <br/>        12 : Zero if disabled, nonzero if enabled.</td>
+
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItemHeader'>Example</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>http://localhost:4800/geteqdatum?p=pass&delim=;</td>
+							</tr>
+
+						</table>
+						<br><br>
+										<div class='DocHeader'><a name='gethash'></a>gethash</div>
+						<div class='DocSubHeader'><p>Get MD5 hash of all filenames in the current playlist.</p></div>
+						<table class='DocItemTable' width='85%'>
+							
+							<tr>
+								<td class='DocItemHeader' width='20%'>Paramater</td>
+
+								<td class='DocItemHeader'>Description</td>
+							</tr>
+														<tr>
+								<td valign='top' class='DocItem'><div class='CodeSample'>p</div></td>
+								<td valign='top' class='DocItem'>The password.</td>
+							</tr>
+														<tr>
+
+								<td colspan='2' class='DocItemHeader'>Return Value</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>MD5 hash.</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItemHeader'>Example</td>
+
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>http://localhost:4800/gethash?p=pass</td>
+							</tr>
+						</table>
+						<br><br>
+										<div class='DocHeader'><a name='gethash'></a>gethash</div>
+						<div class='DocSubHeader'><p>Get MD5 hash of the playlist item at index 'argument'.</p></div>
+
+						<table class='DocItemTable' width='85%'>
+							
+							<tr>
+								<td class='DocItemHeader' width='20%'>Paramater</td>
+								<td class='DocItemHeader'>Description</td>
+							</tr>
+														<tr>
+								<td valign='top' class='DocItem'><div class='CodeSample'>p</div></td>
+
+								<td valign='top' class='DocItem'>The password.</td>
+							</tr>
+														<tr>
+								<td colspan='2' class='DocItemHeader'>Return Value</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>MD5 hash.</td>
+
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItemHeader'>Example</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>http://localhost:4800/gethash?p=pass&index=0</td>
+							</tr>
+
+						</table>
+						<br><br>
+										<div class='DocHeader'><a name='getid3tag'></a>getid3tag</div>
+						<div class='DocSubHeader'><p>Get Id3v1 Tag information about the current playing song.</p></div>
+						<table class='DocItemTable' width='85%'>
+							
+							<tr>
+								<td class='DocItemHeader' width='20%'>Paramater</td>
+
+								<td class='DocItemHeader'>Description</td>
+							</tr>
+														<tr>
+								<td valign='top' class='DocItem'><div class='CodeSample'>p</div></td>
+								<td valign='top' class='DocItem'>The password.</td>
+							</tr>
+														<tr>
+
+								<td colspan='2' class='DocItemHeader'>Return Value</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'></td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItemHeader'>Example</td>
+							</tr>
+
+							<tr>
+								<td colspan='2' class='DocItem'>http://localhost:4800/getid3tag?p=pass&tags=t,a,y,g,l,c,r&delim=;</td>
+							</tr>
+						</table>
+						<br><br>
+										<div class='DocHeader'><a name='getid3tag'></a>getid3tag</div>
+						<div class='DocSubHeader'><p>Get Id3v1 Tag information about playlist item at index 'argument'.</p></div>
+
+						<table class='DocItemTable' width='85%'>
+							
+							<tr>
+								<td class='DocItemHeader' width='20%'>Paramater</td>
+								<td class='DocItemHeader'>Description</td>
+							</tr>
+														<tr>
+								<td valign='top' class='DocItem'><div class='CodeSample'>p</div></td>
+
+								<td valign='top' class='DocItem'>The password.</td>
+							</tr>
+														<tr>
+								<td colspan='2' class='DocItemHeader'>Return Value</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'></td>
+							</tr>
+
+							<tr>
+								<td colspan='2' class='DocItemHeader'>Example</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>http://localhost:4800/getid3tag?p=pass&tags=t,a,y,g,l,c,r&delim=;&index=0</td>
+							</tr>
+
+						</table>
+						<br><br>
+										<div class='DocHeader'><a name='getid3v2tag'></a>getid3v2tag</div>
+						<div class='DocSubHeader'><p>Get Id3v2 Tag information about the current playing song.</p></div>
+						<table class='DocItemTable' width='85%'>
+							
+							<tr>
+								<td class='DocItemHeader' width='20%'>Paramater</td>
+
+								<td class='DocItemHeader'>Description</td>
+							</tr>
+														<tr>
+								<td valign='top' class='DocItem'><div class='CodeSample'>p</div></td>
+								<td valign='top' class='DocItem'>The password.</td>
+							</tr>
+														<tr>
+
+								<td colspan='2' class='DocItemHeader'>Return Value</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'></td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItemHeader'>Example</td>
+							</tr>
+
+							<tr>
+								<td colspan='2' class='DocItem'>http://localhost:4800/getid3v2tag?p=pass&tags=t,a,y,g,l,c,r,m,s,p,o,i,u,e,b&delim=;</td>
+							</tr>
+						</table>
+						<br><br>
+										<div class='DocHeader'><a name='getid3v2tag'></a>getid3v2tag</div>
+						<div class='DocSubHeader'><p>Get Id3v2 Tag information about playlist item at index 'argument'.</p></div>
+
+						<table class='DocItemTable' width='85%'>
+							
+							<tr>
+								<td class='DocItemHeader' width='20%'>Paramater</td>
+								<td class='DocItemHeader'>Description</td>
+							</tr>
+														<tr>
+								<td valign='top' class='DocItem'><div class='CodeSample'>p</div></td>
+
+								<td valign='top' class='DocItem'>The password.</td>
+							</tr>
+														<tr>
+								<td colspan='2' class='DocItemHeader'>Return Value</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'></td>
+							</tr>
+
+							<tr>
+								<td colspan='2' class='DocItemHeader'>Example</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>http://localhost:4800/getid3v2tag?p=pass&tags=t,a,y,g,l,c,r,m,s,p,o,i,u,e,b&delim=;&index=0</td>
+							</tr>
+
+						</table>
+						<br><br>
+										<div class='DocHeader'><a name='getinfo'></a>getinfo</div>
+						<div class='DocSubHeader'><p>Gets info about the current playing song. The value it returns         depends on the value of 'info'.</p></div>
+						<table class='DocItemTable' width='85%'>
+							
+							<tr>
+								<td class='DocItemHeader' width='20%'>Paramater</td>
+
+								<td class='DocItemHeader'>Description</td>
+							</tr>
+														<tr>
+								<td valign='top' class='DocItem'><div class='CodeSample'>p</div></td>
+								<td valign='top' class='DocItem'>The password.</td>
+							</tr>
+														<tr>
+
+								<td colspan='2' class='DocItemHeader'>Return Value</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>Requested info on success. <br/>        0 on error.</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItemHeader'>Example</td>
+
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>http://localhost:4800/getinfo?p=pass&info=0</td>
+							</tr>
+						</table>
+						<br><br>
+										<div class='DocHeader'><a name='getlistlength'></a>getlistlength</div>
+
+						<div class='DocSubHeader'><p>Get the length of the current playlist, in tracks.</p></div>
+						<table class='DocItemTable' width='85%'>
+							
+							<tr>
+								<td class='DocItemHeader' width='20%'>Paramater</td>
+								<td class='DocItemHeader'>Description</td>
+							</tr>
+														<tr>
+
+								<td valign='top' class='DocItem'><div class='CodeSample'>p</div></td>
+								<td valign='top' class='DocItem'>The password.</td>
+							</tr>
+														<tr>
+								<td colspan='2' class='DocItemHeader'>Return Value</td>
+							</tr>
+							<tr>
+
+								<td colspan='2' class='DocItem'>The length of the current playlist or 0 on error.</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItemHeader'>Example</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>http://localhost:4800/getlistlength?p=pass</td>
+
+							</tr>
+						</table>
+						<br><br>
+										<div class='DocHeader'><a name='getlistpos'></a>getlistpos</div>
+						<div class='DocSubHeader'><p>Gets the current index of the play list. <br/>        note: The list is zero indexed so track 1 is index 0.</p></div>
+						<table class='DocItemTable' width='85%'>
+							
+							<tr>
+
+								<td class='DocItemHeader' width='20%'>Paramater</td>
+								<td class='DocItemHeader'>Description</td>
+							</tr>
+														<tr>
+								<td valign='top' class='DocItem'><div class='CodeSample'>p</div></td>
+								<td valign='top' class='DocItem'>The password.</td>
+							</tr>
+
+														<tr>
+								<td colspan='2' class='DocItemHeader'>Return Value</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>The playlist position.</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItemHeader'>Example</td>
+
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>http://localhost:4800/getlistpos?p=pass</td>
+							</tr>
+						</table>
+						<br><br>
+										<div class='DocHeader'><a name='getmpeginfo'></a>getmpeginfo</div>
+						<div class='DocSubHeader'><p>Get Mpeg information about the current playing song.</p></div>
+
+						<table class='DocItemTable' width='85%'>
+							
+							<tr>
+								<td class='DocItemHeader' width='20%'>Paramater</td>
+								<td class='DocItemHeader'>Description</td>
+							</tr>
+														<tr>
+								<td valign='top' class='DocItem'><div class='CodeSample'>p</div></td>
+
+								<td valign='top' class='DocItem'>The password.</td>
+							</tr>
+														<tr>
+								<td colspan='2' class='DocItemHeader'>Return Value</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'></td>
+							</tr>
+
+							<tr>
+								<td colspan='2' class='DocItemHeader'>Example</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>http://localhost:4800/getmpeginfo?p=pass&info=s,t,v,l,f,b,m,c,y,o,e&delim=;</td>
+							</tr>
+						</table>
+
+						<br><br>
+										<div class='DocHeader'><a name='getmpeginfo'></a>getmpeginfo</div>
+						<div class='DocSubHeader'><p>Get Mpeg information about playlist item at index 'argument'.</p></div>
+						<table class='DocItemTable' width='85%'>
+							
+							<tr>
+								<td class='DocItemHeader' width='20%'>Paramater</td>
+								<td class='DocItemHeader'>Description</td>
+
+							</tr>
+														<tr>
+								<td valign='top' class='DocItem'><div class='CodeSample'>p</div></td>
+								<td valign='top' class='DocItem'>The password.</td>
+							</tr>
+														<tr>
+								<td colspan='2' class='DocItemHeader'>Return Value</td>
+
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'></td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItemHeader'>Example</td>
+							</tr>
+							<tr>
+
+								<td colspan='2' class='DocItem'>http://localhost:4800/getmpeginfo?p=pass&info=s,t,v,l,f,b,m,c,y,o,e&delim=;&index=0</td>
+							</tr>
+						</table>
+						<br><br>
+										<div class='DocHeader'><a name='getoutputtime'></a>getoutputtime</div>
+						<div class='DocSubHeader'><p>Returns the position in milliseconds of the current song, or the song length, in seconds.</p></div>
+
+						<table class='DocItemTable' width='85%'>
+							
+							<tr>
+								<td class='DocItemHeader' width='20%'>Paramater</td>
+								<td class='DocItemHeader'>Description</td>
+							</tr>
+														<tr>
+								<td valign='top' class='DocItem'><div class='CodeSample'>p</div></td>
+
+								<td valign='top' class='DocItem'>The password.</td>
+							</tr>
+														<tr>
+								<td colspan='2' class='DocItemHeader'>Return Value</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>-1 if not playing. <br/>        0 on error.</td>
+
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItemHeader'>Example</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>http://localhost:4800/getoutputtime?p=pass&frmt=1</td>
+							</tr>
+
+						</table>
+						<br><br>
+										<div class='DocHeader'><a name='getplaylistfile'></a>getplaylistfile</div>
+						<div class='DocSubHeader'><p>Returns the filename of the current playing song.</p></div>
+						<table class='DocItemTable' width='85%'>
+							
+							<tr>
+								<td class='DocItemHeader' width='20%'>Paramater</td>
+
+								<td class='DocItemHeader'>Description</td>
+							</tr>
+														<tr>
+								<td valign='top' class='DocItem'><div class='CodeSample'>p</div></td>
+								<td valign='top' class='DocItem'>The password.</td>
+							</tr>
+														<tr>
+
+								<td colspan='2' class='DocItemHeader'>Return Value</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>Filename of track on success. <br/>        0 otherwise.</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItemHeader'>Example</td>
+
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>http://localhost:4800/getplaylistfile?p=pass</td>
+							</tr>
+						</table>
+						<br><br>
+										<div class='DocHeader'><a name='getplaylistfile'></a>getplaylistfile</div>
+						<div class='DocSubHeader'><p>Returns the filename of the playlist entry at index 'argument'.</p></div>
+
+						<table class='DocItemTable' width='85%'>
+							
+							<tr>
+								<td class='DocItemHeader' width='20%'>Paramater</td>
+								<td class='DocItemHeader'>Description</td>
+							</tr>
+														<tr>
+								<td valign='top' class='DocItem'><div class='CodeSample'>p</div></td>
+
+								<td valign='top' class='DocItem'>The password.</td>
+							</tr>
+														<tr>
+								<td colspan='2' class='DocItemHeader'>Return Value</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>Filename of track on success. <br/>        0 otherwise.</td>
+
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItemHeader'>Example</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>http://localhost:4800/getplaylistfile?p=pass&index=0</td>
+							</tr>
+
+						</table>
+						<br><br>
+										<div class='DocHeader'><a name='getplaylistfilelist'></a>getplaylistfilelist</div>
+						<div class='DocSubHeader'><p>Returns a list of all the filenames in the playlist seperated by the specified delimiter.</p></div>
+						<table class='DocItemTable' width='85%'>
+							
+							<tr>
+								<td class='DocItemHeader' width='20%'>Paramater</td>
+
+								<td class='DocItemHeader'>Description</td>
+							</tr>
+														<tr>
+								<td valign='top' class='DocItem'><div class='CodeSample'>p</div></td>
+								<td valign='top' class='DocItem'>The password.</td>
+							</tr>
+														<tr>
+
+								<td colspan='2' class='DocItemHeader'>Return Value</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>List of filenames on success. <br/>        0 otherwise.</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItemHeader'>Example</td>
+
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>http://localhost:4800/getplaylistfilelist?p=pass&delim=;</td>
+							</tr>
+						</table>
+						<br><br>
+										<div class='DocHeader'><a name='getplaylisttitle'></a>getplaylisttitle</div>
+
+						<div class='DocSubHeader'><p>Returns the title of the current playing song.</p></div>
+						<table class='DocItemTable' width='85%'>
+							
+							<tr>
+								<td class='DocItemHeader' width='20%'>Paramater</td>
+								<td class='DocItemHeader'>Description</td>
+							</tr>
+														<tr>
+
+								<td valign='top' class='DocItem'><div class='CodeSample'>p</div></td>
+								<td valign='top' class='DocItem'>The password.</td>
+							</tr>
+														<tr>
+								<td colspan='2' class='DocItemHeader'>Return Value</td>
+							</tr>
+							<tr>
+
+								<td colspan='2' class='DocItem'>Title of track on success. <br/>        0 otherwise.</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItemHeader'>Example</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>http://localhost:4800/getplaylisttitle?p=pass</td>
+
+							</tr>
+						</table>
+						<br><br>
+										<div class='DocHeader'><a name='getplaylisttitle'></a>getplaylisttitle</div>
+						<div class='DocSubHeader'><p>Returns the title of the playlist entry at index 'index'.</p></div>
+						<table class='DocItemTable' width='85%'>
+							
+							<tr>
+								<td class='DocItemHeader' width='20%'>Paramater</td>
+
+								<td class='DocItemHeader'>Description</td>
+							</tr>
+														<tr>
+								<td valign='top' class='DocItem'><div class='CodeSample'>p</div></td>
+								<td valign='top' class='DocItem'>The password.</td>
+							</tr>
+														<tr>
+
+								<td colspan='2' class='DocItemHeader'>Return Value</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>Title of track on success. <br/>        0 otherwise.</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItemHeader'>Example</td>
+
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>http://localhost:4800/getplaylisttitle?p=pass&index=0</td>
+							</tr>
+						</table>
+						<br><br>
+										<div class='DocHeader'><a name='getplaylisttitlelist'></a>getplaylisttitlelist</div>
+
+						<div class='DocSubHeader'><p>Returns a list of all the titles in the playlist seperated by the specified delimiter.</p></div>
+						<table class='DocItemTable' width='85%'>
+							
+							<tr>
+								<td class='DocItemHeader' width='20%'>Paramater</td>
+								<td class='DocItemHeader'>Description</td>
+							</tr>
+														<tr>
+
+								<td valign='top' class='DocItem'><div class='CodeSample'>p</div></td>
+								<td valign='top' class='DocItem'>The password.</td>
+							</tr>
+														<tr>
+								<td colspan='2' class='DocItemHeader'>Return Value</td>
+							</tr>
+							<tr>
+
+								<td colspan='2' class='DocItem'>List of track titles on success. <br/>        0 otherwise.</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItemHeader'>Example</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>http://localhost:4800/getplaylisttitlelist?p=pass&delim=;</td>
+
+							</tr>
+						</table>
+						<br><br>
+										<div class='DocHeader'><a name='getversion'></a>getversion</div>
+						<div class='DocSubHeader'><p>Get the current version of the winamp player.</p></div>
+						<table class='DocItemTable' width='85%'>
+							
+							<tr>
+								<td class='DocItemHeader' width='20%'>Paramater</td>
+
+								<td class='DocItemHeader'>Description</td>
+							</tr>
+														<tr>
+								<td valign='top' class='DocItem'><div class='CodeSample'>p</div></td>
+								<td valign='top' class='DocItem'>The password.</td>
+							</tr>
+														<tr>
+
+								<td colspan='2' class='DocItemHeader'>Return Value</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>Version of winamp, or 0 on error.</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItemHeader'>Example</td>
+
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>http://localhost:4800/getversion?p=pass</td>
+							</tr>
+						</table>
+						<br><br>
+										<div class='DocHeader'><a name='getvolume'></a>getvolume</div>
+						<div class='DocSubHeader'><p>Get the volume level.</p></div>
+
+						<table class='DocItemTable' width='85%'>
+							
+							<tr>
+								<td class='DocItemHeader' width='20%'>Paramater</td>
+								<td class='DocItemHeader'>Description</td>
+							</tr>
+														<tr>
+								<td valign='top' class='DocItem'><div class='CodeSample'>p</div></td>
+
+								<td valign='top' class='DocItem'>The password.</td>
+							</tr>
+														<tr>
+								<td colspan='2' class='DocItemHeader'>Return Value</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>volume level on success. <br/>        0 otherwise.</td>
+
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItemHeader'>Example</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>http://localhost:4800/getvolume?p=pass</td>
+							</tr>
+						</table>
+
+						<br><br>
+										<div class='DocHeader'><a name='hasid3tag'></a>hasid3tag</div>
+						<div class='DocSubHeader'><p>Determine if the current playing song contains ID3v1 Tag information.</p></div>
+						<table class='DocItemTable' width='85%'>
+							
+							<tr>
+								<td class='DocItemHeader' width='20%'>Paramater</td>
+								<td class='DocItemHeader'>Description</td>
+
+							</tr>
+														<tr>
+								<td valign='top' class='DocItem'><div class='CodeSample'>p</div></td>
+								<td valign='top' class='DocItem'>The password.</td>
+							</tr>
+														<tr>
+								<td colspan='2' class='DocItemHeader'>Return Value</td>
+
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'></td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItemHeader'>Example</td>
+							</tr>
+							<tr>
+
+								<td colspan='2' class='DocItem'>http://localhost:4800/hasid3tag?p=pass</td>
+							</tr>
+						</table>
+						<br><br>
+										<div class='DocHeader'><a name='hasid3tag'></a>hasid3tag</div>
+						<div class='DocSubHeader'><p>Determine if playlist item at index 'argument' contains ID3v1 Tag information.</p></div>
+						<table class='DocItemTable' width='85%'>
+
+							
+							<tr>
+								<td class='DocItemHeader' width='20%'>Paramater</td>
+								<td class='DocItemHeader'>Description</td>
+							</tr>
+														<tr>
+								<td valign='top' class='DocItem'><div class='CodeSample'>p</div></td>
+								<td valign='top' class='DocItem'>The password.</td>
+
+							</tr>
+														<tr>
+								<td colspan='2' class='DocItemHeader'>Return Value</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'></td>
+							</tr>
+							<tr>
+
+								<td colspan='2' class='DocItemHeader'>Example</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>http://localhost:4800/hasid3tag?p=pass&index=0</td>
+							</tr>
+						</table>
+						<br><br>
+
+										<div class='DocHeader'><a name='hasid3v2tag'></a>hasid3v2tag</div>
+						<div class='DocSubHeader'><p>Determine if the current playing song contains ID3v2 Tag information.</p></div>
+						<table class='DocItemTable' width='85%'>
+							
+							<tr>
+								<td class='DocItemHeader' width='20%'>Paramater</td>
+								<td class='DocItemHeader'>Description</td>
+							</tr>
+
+														<tr>
+								<td valign='top' class='DocItem'><div class='CodeSample'>p</div></td>
+								<td valign='top' class='DocItem'>The password.</td>
+							</tr>
+														<tr>
+								<td colspan='2' class='DocItemHeader'>Return Value</td>
+							</tr>
+
+							<tr>
+								<td colspan='2' class='DocItem'></td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItemHeader'>Example</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>http://localhost:4800/hasid3v2tag?p=pass</td>
+
+							</tr>
+						</table>
+						<br><br>
+										<div class='DocHeader'><a name='hasid3v2tag'></a>hasid3v2tag</div>
+						<div class='DocSubHeader'><p>Determine if playlist item at index 'argument' contains ID3v2 Tag information.</p></div>
+						<table class='DocItemTable' width='85%'>
+							
+							<tr>
+								<td class='DocItemHeader' width='20%'>Paramater</td>
+
+								<td class='DocItemHeader'>Description</td>
+							</tr>
+														<tr>
+								<td valign='top' class='DocItem'><div class='CodeSample'>p</div></td>
+								<td valign='top' class='DocItem'>The password.</td>
+							</tr>
+														<tr>
+
+								<td colspan='2' class='DocItemHeader'>Return Value</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'></td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItemHeader'>Example</td>
+							</tr>
+
+							<tr>
+								<td colspan='2' class='DocItem'>http://localhost:4800/hasid3v2tag?p=pass&index=0</td>
+							</tr>
+						</table>
+						<br><br>
+										<div class='DocHeader'><a name='internet'></a>internet</div>
+						<div class='DocSubHeader'><p>Checks for an internet conection.</p></div>
+
+						<table class='DocItemTable' width='85%'>
+							
+							<tr>
+								<td class='DocItemHeader' width='20%'>Paramater</td>
+								<td class='DocItemHeader'>Description</td>
+							</tr>
+														<tr>
+								<td valign='top' class='DocItem'><div class='CodeSample'>p</div></td>
+
+								<td valign='top' class='DocItem'>The password.</td>
+							</tr>
+														<tr>
+								<td colspan='2' class='DocItemHeader'>Return Value</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>1 if internect conecton exists.</td>
+
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItemHeader'>Example</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>http://localhost:4800/internet?p=pass</td>
+							</tr>
+						</table>
+
+						<br><br>
+										<div class='DocHeader'><a name='isplaying'></a>isplaying</div>
+						<div class='DocSubHeader'><p>Get the playing status of winamp player.</p></div>
+						<table class='DocItemTable' width='85%'>
+							
+							<tr>
+								<td class='DocItemHeader' width='20%'>Paramater</td>
+								<td class='DocItemHeader'>Description</td>
+
+							</tr>
+														<tr>
+								<td valign='top' class='DocItem'><div class='CodeSample'>p</div></td>
+								<td valign='top' class='DocItem'>The password.</td>
+							</tr>
+														<tr>
+								<td colspan='2' class='DocItemHeader'>Return Value</td>
+
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>1 = playing <br/>        0 = not playing <br/>        3 = paused</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItemHeader'>Example</td>
+
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>http://localhost:4800/isplaying?p=pass</td>
+							</tr>
+						</table>
+						<br><br>
+										<div class='DocHeader'><a name='jumptotime'></a>jumptotime</div>
+						<div class='DocSubHeader'><p>Sets the position in milliseconds of the current song (approximately) to 'argument'.</p></div>
+
+						<table class='DocItemTable' width='85%'>
+							
+							<tr>
+								<td class='DocItemHeader' width='20%'>Paramater</td>
+								<td class='DocItemHeader'>Description</td>
+							</tr>
+														<tr>
+								<td valign='top' class='DocItem'><div class='CodeSample'>p</div></td>
+
+								<td valign='top' class='DocItem'>The password.</td>
+							</tr>
+														<tr>
+								<td colspan='2' class='DocItemHeader'>Return Value</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>1 on success. <br/>        0 otherwise.</td>
+
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItemHeader'>Example</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>http://localhost:4800/jumptotime?p=pass&ms=0</td>
+							</tr>
+
+						</table>
+						<br><br>
+										<div class='DocHeader'><a name='next'></a>next</div>
+						<div class='DocSubHeader'><p>Like clicking on it.</p></div>
+						<table class='DocItemTable' width='85%'>
+							
+							<tr>
+								<td class='DocItemHeader' width='20%'>Paramater</td>
+
+								<td class='DocItemHeader'>Description</td>
+							</tr>
+														<tr>
+								<td valign='top' class='DocItem'><div class='CodeSample'>p</div></td>
+								<td valign='top' class='DocItem'>The password.</td>
+							</tr>
+														<tr>
+
+								<td colspan='2' class='DocItemHeader'>Return Value</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>1 on success, 0 otherwise.</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItemHeader'>Example</td>
+
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>http://localhost:4800/next?p=pass</td>
+							</tr>
+						</table>
+						<br><br>
+										<div class='DocHeader'><a name='pause'></a>pause</div>
+						<div class='DocSubHeader'><p>Like clicking on it.</p></div>
+
+						<table class='DocItemTable' width='85%'>
+							
+							<tr>
+								<td class='DocItemHeader' width='20%'>Paramater</td>
+								<td class='DocItemHeader'>Description</td>
+							</tr>
+														<tr>
+								<td valign='top' class='DocItem'><div class='CodeSample'>p</div></td>
+
+								<td valign='top' class='DocItem'>The password.</td>
+							</tr>
+														<tr>
+								<td colspan='2' class='DocItemHeader'>Return Value</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>1 on success, 0 otherwise.</td>
+
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItemHeader'>Example</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>http://localhost:4800/pause?p=pass</td>
+							</tr>
+						</table>
+
+						<br><br>
+										<div class='DocHeader'><a name='play'></a>play</div>
+						<div class='DocSubHeader'><p>Like clicking on it.</p></div>
+						<table class='DocItemTable' width='85%'>
+							
+							<tr>
+								<td class='DocItemHeader' width='20%'>Paramater</td>
+								<td class='DocItemHeader'>Description</td>
+
+							</tr>
+														<tr>
+								<td valign='top' class='DocItem'><div class='CodeSample'>p</div></td>
+								<td valign='top' class='DocItem'>The password.</td>
+							</tr>
+														<tr>
+								<td colspan='2' class='DocItemHeader'>Return Value</td>
+
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>1 on success, 0 otherwise.</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItemHeader'>Example</td>
+							</tr>
+							<tr>
+
+								<td colspan='2' class='DocItem'>http://localhost:4800/play?p=pass</td>
+							</tr>
+						</table>
+						<br><br>
+										<div class='DocHeader'><a name='playfile'></a>playfile</div>
+						<div class='DocSubHeader'><p>Appends a file to the playlist. <br/>        The file must be in the current working directory or pass in the directory         along with the filename as the argument.</p></div>
+
+						<table class='DocItemTable' width='85%'>
+							
+							<tr>
+								<td class='DocItemHeader' width='20%'>Paramater</td>
+								<td class='DocItemHeader'>Description</td>
+							</tr>
+														<tr>
+								<td valign='top' class='DocItem'><div class='CodeSample'>p</div></td>
+
+								<td valign='top' class='DocItem'>The password.</td>
+							</tr>
+														<tr>
+								<td colspan='2' class='DocItemHeader'>Return Value</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>1 on success. <br/>        0 otherwise.</td>
+
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItemHeader'>Example</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>http://localhost:4800/playfile?p=pass&file=c:\My%20Music\Song.mp3</td>
+							</tr>
+
+						</table>
+						<br><br>
+										<div class='DocHeader'><a name='playurl'></a>playurl</div>
+						<div class='DocSubHeader'><p>Appends a URL to the playlist. <br/></p></div>
+						<table class='DocItemTable' width='85%'>
+							
+							<tr>
+								<td class='DocItemHeader' width='20%'>Paramater</td>
+
+								<td class='DocItemHeader'>Description</td>
+							</tr>
+														<tr>
+								<td valign='top' class='DocItem'><div class='CodeSample'>p</div></td>
+								<td valign='top' class='DocItem'>The password.</td>
+							</tr>
+														<tr>
+
+								<td colspan='2' class='DocItemHeader'>Return Value</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>1 on success. <br/>        0 otherwise.</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItemHeader'>Example</td>
+
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>http://localhost:4800/playurl?p=pass&url=http://localhost/song.mp3</td>
+							</tr>
+						</table>
+						<br><br>
+										<div class='DocHeader'><a name='prev'></a>prev</div>
+
+						<div class='DocSubHeader'><p>Like clicking on it.</p></div>
+						<table class='DocItemTable' width='85%'>
+							
+							<tr>
+								<td class='DocItemHeader' width='20%'>Paramater</td>
+								<td class='DocItemHeader'>Description</td>
+							</tr>
+														<tr>
+
+								<td valign='top' class='DocItem'><div class='CodeSample'>p</div></td>
+								<td valign='top' class='DocItem'>The password.</td>
+							</tr>
+														<tr>
+								<td colspan='2' class='DocItemHeader'>Return Value</td>
+							</tr>
+							<tr>
+
+								<td colspan='2' class='DocItem'>1 on success, 0 otherwise.</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItemHeader'>Example</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>http://localhost:4800/prev?p=pass</td>
+
+							</tr>
+						</table>
+						<br><br>
+										<div class='DocHeader'><a name='repeat'></a>repeat</div>
+						<div class='DocSubHeader'><p>Toggle repeat on and off.</p></div>
+						<table class='DocItemTable' width='85%'>
+							
+							<tr>
+								<td class='DocItemHeader' width='20%'>Paramater</td>
+
+								<td class='DocItemHeader'>Description</td>
+							</tr>
+														<tr>
+								<td valign='top' class='DocItem'><div class='CodeSample'>p</div></td>
+								<td valign='top' class='DocItem'>The password.</td>
+							</tr>
+														<tr>
+
+								<td colspan='2' class='DocItemHeader'>Return Value</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>1 on success. <br/>        0 otherwise</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItemHeader'>Example</td>
+
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>http://localhost:4800/repeat?p=pass&enable=0</td>
+							</tr>
+						</table>
+						<br><br>
+										<div class='DocHeader'><a name='repeat_status'></a>repeat_status</div>
+
+						<div class='DocSubHeader'><p>Gets the status of the repeat button.</p></div>
+						<table class='DocItemTable' width='85%'>
+							
+							<tr>
+								<td class='DocItemHeader' width='20%'>Paramater</td>
+								<td class='DocItemHeader'>Description</td>
+							</tr>
+														<tr>
+
+								<td valign='top' class='DocItem'><div class='CodeSample'>p</div></td>
+								<td valign='top' class='DocItem'>The password.</td>
+							</tr>
+														<tr>
+								<td colspan='2' class='DocItemHeader'>Return Value</td>
+							</tr>
+							<tr>
+
+								<td colspan='2' class='DocItem'>1 if repeat is on. <br/>       0 if repeat is off.</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItemHeader'>Example</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>http://localhost:4800/repeat_status?p=pass</td>
+
+							</tr>
+						</table>
+						<br><br>
+										<div class='DocHeader'><a name='restart'></a>restart</div>
+						<div class='DocSubHeader'><p>Restarts winamp and httpQ server. <br/>        note: If the httpQ service is not set to start automatically, the httpQ server will not continue to accept connections.</p></div>
+						<table class='DocItemTable' width='85%'>
+							
+							<tr>
+
+								<td class='DocItemHeader' width='20%'>Paramater</td>
+								<td class='DocItemHeader'>Description</td>
+							</tr>
+														<tr>
+								<td valign='top' class='DocItem'><div class='CodeSample'>p</div></td>
+								<td valign='top' class='DocItem'>The password.</td>
+							</tr>
+
+														<tr>
+								<td colspan='2' class='DocItemHeader'>Return Value</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>1 on success.</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItemHeader'>Example</td>
+
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>http://localhost:4800/restart?p=pass</td>
+							</tr>
+						</table>
+						<br><br>
+										<div class='DocHeader'><a name='setautoservice'></a>setautoservice</div>
+						<div class='DocSubHeader'><p>Returns the status the httpQ autostart configuration.</p></div>
+
+						<table class='DocItemTable' width='85%'>
+							
+							<tr>
+								<td class='DocItemHeader' width='20%'>Paramater</td>
+								<td class='DocItemHeader'>Description</td>
+							</tr>
+														<tr>
+								<td valign='top' class='DocItem'><div class='CodeSample'>p</div></td>
+
+								<td valign='top' class='DocItem'>The password.</td>
+							</tr>
+														<tr>
+								<td colspan='2' class='DocItemHeader'>Return Value</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>1 if the service is set to start automatically.</td>
+
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItemHeader'>Example</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>http://localhost:4800/setautoservice?p=pass&enable=1</td>
+							</tr>
+
+						</table>
+						<br><br>
+										<div class='DocHeader'><a name='setclean'></a>setclean</div>
+						<div class='DocSubHeader'><p>Set the clean flag for the the current playlist.</p></div>
+						<table class='DocItemTable' width='85%'>
+							
+							<tr>
+								<td class='DocItemHeader' width='20%'>Paramater</td>
+
+								<td class='DocItemHeader'>Description</td>
+							</tr>
+														<tr>
+								<td valign='top' class='DocItem'><div class='CodeSample'>p</div></td>
+								<td valign='top' class='DocItem'>The password.</td>
+							</tr>
+														<tr>
+
+								<td colspan='2' class='DocItemHeader'>Return Value</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'></td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItemHeader'>Example</td>
+							</tr>
+
+							<tr>
+								<td colspan='2' class='DocItem'>http://localhost:4800/setclean?p=pass</td>
+							</tr>
+						</table>
+						<br><br>
+										<div class='DocHeader'><a name='seteqdata'></a>seteqdata</div>
+						<div class='DocSubHeader'><p>Sets the eq data at 'band' to 'level'.</p></div>
+
+						<table class='DocItemTable' width='85%'>
+							
+							<tr>
+								<td class='DocItemHeader' width='20%'>Paramater</td>
+								<td class='DocItemHeader'>Description</td>
+							</tr>
+														<tr>
+								<td valign='top' class='DocItem'><div class='CodeSample'>p</div></td>
+
+								<td valign='top' class='DocItem'>The password.</td>
+							</tr>
+														<tr>
+								<td colspan='2' class='DocItemHeader'>Return Value</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>1 on success. <br/>        0 otherwise.</td>
+
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItemHeader'>Example</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>http://localhost:4800/seteqdata?p=pass&band=0&level=31</td>
+							</tr>
+
+						</table>
+						<br><br>
+										<div class='DocHeader'><a name='seteqdatum'></a>seteqdatum</div>
+						<div class='DocSubHeader'><p>Sets all bands of eq data to the specified 'levels'.</p></div>
+						<table class='DocItemTable' width='85%'>
+							
+							<tr>
+								<td class='DocItemHeader' width='20%'>Paramater</td>
+
+								<td class='DocItemHeader'>Description</td>
+							</tr>
+														<tr>
+								<td valign='top' class='DocItem'><div class='CodeSample'>p</div></td>
+								<td valign='top' class='DocItem'>The password.</td>
+							</tr>
+														<tr>
+
+								<td colspan='2' class='DocItemHeader'>Return Value</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>1 on success. <br/>        0 otherwise.</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItemHeader'>Example</td>
+
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>http://localhost:4800/seteqdatum?p=pass&levels=31,31,31,31,31,31,31,31,31,31,31,1,1</td>
+							</tr>
+						</table>
+						<br><br>
+										<div class='DocHeader'><a name='setplaylistpos'></a>setplaylistpos</div>
+
+						<div class='DocSubHeader'><p>Sets the playlsit position to 'argument'.</p></div>
+						<table class='DocItemTable' width='85%'>
+							
+							<tr>
+								<td class='DocItemHeader' width='20%'>Paramater</td>
+								<td class='DocItemHeader'>Description</td>
+							</tr>
+														<tr>
+
+								<td valign='top' class='DocItem'><div class='CodeSample'>p</div></td>
+								<td valign='top' class='DocItem'>The password.</td>
+							</tr>
+														<tr>
+								<td colspan='2' class='DocItemHeader'>Return Value</td>
+							</tr>
+							<tr>
+
+								<td colspan='2' class='DocItem'>1 on success. <br/>        0 otherwise.</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItemHeader'>Example</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>http://localhost:4800/setplaylistpos?p=pass&index=0</td>
+
+							</tr>
+						</table>
+						<br><br>
+										<div class='DocHeader'><a name='setvolume'></a>setvolume</div>
+						<div class='DocSubHeader'><p>Set the volume level.</p></div>
+						<table class='DocItemTable' width='85%'>
+							
+							<tr>
+								<td class='DocItemHeader' width='20%'>Paramater</td>
+
+								<td class='DocItemHeader'>Description</td>
+							</tr>
+														<tr>
+								<td valign='top' class='DocItem'><div class='CodeSample'>p</div></td>
+								<td valign='top' class='DocItem'>The password.</td>
+							</tr>
+														<tr>
+
+								<td colspan='2' class='DocItemHeader'>Return Value</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>1 on success. <br/>        0 otherwise</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItemHeader'>Example</td>
+
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>http://localhost:4800/setvolume?p=pass&level=0</td>
+							</tr>
+						</table>
+						<br><br>
+										<div class='DocHeader'><a name='shoutcast_connect'></a>shoutcast_connect</div>
+
+						<div class='DocSubHeader'><p>Attempts to start the shoutcast server.</p></div>
+						<table class='DocItemTable' width='85%'>
+							
+							<tr>
+								<td class='DocItemHeader' width='20%'>Paramater</td>
+								<td class='DocItemHeader'>Description</td>
+							</tr>
+														<tr>
+
+								<td valign='top' class='DocItem'><div class='CodeSample'>p</div></td>
+								<td valign='top' class='DocItem'>The password.</td>
+							</tr>
+														<tr>
+								<td colspan='2' class='DocItemHeader'>Return Value</td>
+							</tr>
+							<tr>
+
+								<td colspan='2' class='DocItem'>1 on success.</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItemHeader'>Example</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>http://localhost:4800/shoutcast_connect?p=pass</td>
+
+							</tr>
+						</table>
+						<br><br>
+										<div class='DocHeader'><a name='shoutcast_status'></a>shoutcast_status</div>
+						<div class='DocSubHeader'><p>Attempts to retrieve status from shoutcast server.</p></div>
+						<table class='DocItemTable' width='85%'>
+							
+							<tr>
+								<td class='DocItemHeader' width='20%'>Paramater</td>
+
+								<td class='DocItemHeader'>Description</td>
+							</tr>
+														<tr>
+								<td valign='top' class='DocItem'><div class='CodeSample'>p</div></td>
+								<td valign='top' class='DocItem'>The password.</td>
+							</tr>
+														<tr>
+
+								<td colspan='2' class='DocItemHeader'>Return Value</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>Status of shoutcast server if successful  <br/>		0 otherwise.</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItemHeader'>Example</td>
+
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>http://localhost:4800/shoutcast_status?p=pass</td>
+							</tr>
+						</table>
+						<br><br>
+										<div class='DocHeader'><a name='shuffle'></a>shuffle</div>
+						<div class='DocSubHeader'><p>Toggle shuffle on and off.</p></div>
+
+						<table class='DocItemTable' width='85%'>
+							
+							<tr>
+								<td class='DocItemHeader' width='20%'>Paramater</td>
+								<td class='DocItemHeader'>Description</td>
+							</tr>
+														<tr>
+								<td valign='top' class='DocItem'><div class='CodeSample'>p</div></td>
+
+								<td valign='top' class='DocItem'>The password.</td>
+							</tr>
+														<tr>
+								<td colspan='2' class='DocItemHeader'>Return Value</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>1 if shuffle is on. <br/>        0 otherwise</td>
+
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItemHeader'>Example</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>http://localhost:4800/shuffle?p=pass&enable=0</td>
+							</tr>
+
+						</table>
+						<br><br>
+										<div class='DocHeader'><a name='shuffle_status'></a>shuffle_status</div>
+						<div class='DocSubHeader'><p>Gets the status of shuffle button.</p></div>
+						<table class='DocItemTable' width='85%'>
+							
+							<tr>
+								<td class='DocItemHeader' width='20%'>Paramater</td>
+
+								<td class='DocItemHeader'>Description</td>
+							</tr>
+														<tr>
+								<td valign='top' class='DocItem'><div class='CodeSample'>p</div></td>
+								<td valign='top' class='DocItem'>The password.</td>
+							</tr>
+														<tr>
+
+								<td colspan='2' class='DocItemHeader'>Return Value</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>1 on success. <br/>       0 otherwise.</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItemHeader'>Example</td>
+
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>http://localhost:4800/shuffle_status?p=pass</td>
+							</tr>
+						</table>
+						<br><br>
+										<div class='DocHeader'><a name='stop'></a>stop</div>
+						<div class='DocSubHeader'><p>Like clicking on it.</p></div>
+
+						<table class='DocItemTable' width='85%'>
+							
+							<tr>
+								<td class='DocItemHeader' width='20%'>Paramater</td>
+								<td class='DocItemHeader'>Description</td>
+							</tr>
+														<tr>
+								<td valign='top' class='DocItem'><div class='CodeSample'>p</div></td>
+
+								<td valign='top' class='DocItem'>The password.</td>
+							</tr>
+														<tr>
+								<td colspan='2' class='DocItemHeader'>Return Value</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>1 on success, 0 otherwise.</td>
+
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItemHeader'>Example</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>http://localhost:4800/stop?p=pass</td>
+							</tr>
+						</table>
+
+						<br><br>
+										<div class='DocHeader'><a name='swappos'></a>swappos</div>
+						<div class='DocSubHeader'><p>Swap the playlist items at indices 'from' and 'to'.</p></div>
+						<table class='DocItemTable' width='85%'>
+							
+							<tr>
+								<td class='DocItemHeader' width='20%'>Paramater</td>
+								<td class='DocItemHeader'>Description</td>
+
+							</tr>
+														<tr>
+								<td valign='top' class='DocItem'><div class='CodeSample'>p</div></td>
+								<td valign='top' class='DocItem'>The password.</td>
+							</tr>
+														<tr>
+								<td colspan='2' class='DocItemHeader'>Return Value</td>
+
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>1 on success, <br/>        0 otherwise.</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItemHeader'>Example</td>
+							</tr>
+
+							<tr>
+								<td colspan='2' class='DocItem'>http://localhost:4800/swappos?p=pass&from=0&to=1</td>
+							</tr>
+						</table>
+						<br><br>
+										<div class='DocHeader'><a name='updatecurrenttitle'></a>updatecurrenttitle</div>
+						<div class='DocSubHeader'><p>Updates the information about the current title.</p></div>
+
+						<table class='DocItemTable' width='85%'>
+							
+							<tr>
+								<td class='DocItemHeader' width='20%'>Paramater</td>
+								<td class='DocItemHeader'>Description</td>
+							</tr>
+														<tr>
+								<td valign='top' class='DocItem'><div class='CodeSample'>p</div></td>
+
+								<td valign='top' class='DocItem'>The password.</td>
+							</tr>
+														<tr>
+								<td colspan='2' class='DocItemHeader'>Return Value</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>1 on success.</td>
+
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItemHeader'>Example</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>http://localhost:4800/updatecurrenttitle?p=pass</td>
+							</tr>
+						</table>
+
+						<br><br>
+										<div class='DocHeader'><a name='validate_password'></a>validate_password</div>
+						<div class='DocSubHeader'><p>Check a given string against the real password.</p></div>
+						<table class='DocItemTable' width='85%'>
+							
+							<tr>
+								<td class='DocItemHeader' width='20%'>Paramater</td>
+								<td class='DocItemHeader'>Description</td>
+
+							</tr>
+														<tr>
+								<td valign='top' class='DocItem'><div class='CodeSample'>pass</div></td>
+								<td valign='top' class='DocItem'>a string representing the password to validate.</td>
+							</tr>
+														<tr>
+								<td colspan='2' class='DocItemHeader'>Return Value</td>
+
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>1 if passwords match. <br/>        0 if passwords do not match.</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItemHeader'>Example</td>
+							</tr>
+
+							<tr>
+								<td colspan='2' class='DocItem'>http://localhost:4800/validate_password?pass=pass</td>
+							</tr>
+						</table>
+						<br><br>
+										<div class='DocHeader'><a name='volumedown'></a>volumedown</div>
+						<div class='DocSubHeader'><p>Turns down the volume.</p></div>
+
+						<table class='DocItemTable' width='85%'>
+							
+							<tr>
+								<td class='DocItemHeader' width='20%'>Paramater</td>
+								<td class='DocItemHeader'>Description</td>
+							</tr>
+														<tr>
+								<td valign='top' class='DocItem'><div class='CodeSample'>p</div></td>
+
+								<td valign='top' class='DocItem'>The password.</td>
+							</tr>
+														<tr>
+								<td colspan='2' class='DocItemHeader'>Return Value</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>1 on success. <br/>        0 otherwise.</td>
+
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItemHeader'>Example</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>http://localhost:4800/volumedown?p=pass</td>
+							</tr>
+						</table>
+
+						<br><br>
+										<div class='DocHeader'><a name='volumeup'></a>volumeup</div>
+						<div class='DocSubHeader'><p>Turns up the volume.</p></div>
+						<table class='DocItemTable' width='85%'>
+							
+							<tr>
+								<td class='DocItemHeader' width='20%'>Paramater</td>
+								<td class='DocItemHeader'>Description</td>
+
+							</tr>
+														<tr>
+								<td valign='top' class='DocItem'><div class='CodeSample'>p</div></td>
+								<td valign='top' class='DocItem'>The password.</td>
+							</tr>
+														<tr>
+								<td colspan='2' class='DocItemHeader'>Return Value</td>
+
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItem'>1 on success. <br/>        0 otherwise.</td>
+							</tr>
+							<tr>
+								<td colspan='2' class='DocItemHeader'>Example</td>
+							</tr>
+
+							<tr>
+								<td colspan='2' class='DocItem'>http://localhost:4800/volumeup?p=pass</td>
+							</tr>
+						</table>
+						<br><br>
+				
+			</div>
+		</td>
+	</tr>
+
+</table>
+<br />
+	
+<!-- begin footer --->
+<hr />
+<table width="100%" border="0">
+  <tr>
+    <td class="NavBarSmall" align="right">
+		<a href="http://sourceforge.net/donate/index.php?group_id=103851"><img src="http://images.sourceforge.net/images/project-support.jpg" width="88" height="32" border="0" alt="Support This Project" /></a>&nbsp;
+	</td>
+  </tr>
+  <tr> 
+    <td class="NavBarSmall" align="right"> 
+        &copy;1999-2003 <a href="mailto:karvanitis@hotmail.com">Kosta Arvanitis</a>
+
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>
